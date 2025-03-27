@@ -5,7 +5,7 @@ const pool = mysql.createConnection(
         host:'localhost',
         user:'root',
         password:'',
-        database:'todo_db'   
+        database:'gestion_employe'   
     }
 )
 module.exports=pool
