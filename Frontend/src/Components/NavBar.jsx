@@ -1,24 +1,24 @@
+
 export default function NavBar(){
-    return <nav>
-    <div>
-        Christophe  <span>Thierry</span>
-    </div>
-    <div>
-        <div class="link" ><a href="">Home</a></div>
-        <div class="link" ><a href="">About</a></div>
-        <div class="link" ><a href="">Skills</a></div>
-        <div class="link" ><a href="">Services</a></div>
-        <div class="link"><a href="">Contact</a></div>
-    </div>
-    <div>
-        <div class="dropdown">
-            <a href="">Home </a>
-            <a href="">About</a>
-            <a href="">Skills</a>
-            <a href="">Contact</a> 
-            <i></i>
-        </div>
-    </div>
-</nav>
+    return (
+        <nav className="navbar navbar-expand-sm navbar-light bg-dark custom-navbar">
+        <p>ss</p>
+        <a class="navbar-brand text-white" href="#">APPLICATION WEB GESTION EMPLOYE</a>
+                  <div className="container d-flex align-items-center">
+            
+                  <div className="navbar-nav d-flex flex-row mx-auto ">
+                       
+                     </div>
+                      <ul className="navbar-nav">
+                              <li className="nav-item">
+                          
+                            
+                            </li>
+                      </ul>
+    
+              
+                </div>
+              </nav>    
+    )
 
 }
