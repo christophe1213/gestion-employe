@@ -7,6 +7,6 @@ EmployeRouter.get('/',getAllEmploye)
 EmployeRouter.get('/:id',getByIdEmploye)
 EmployeRouter.post('/',insertEmploye)
 EmployeRouter.put('/',updateEmploye)
-EmployeRouter.delete('/',deleteEmploye)
+EmployeRouter.delete('/:id',deleteEmploye)
 
 module.exports=EmployeRouter
