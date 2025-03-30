@@ -1,7 +1,13 @@
-import { act, createContext, useReducer } from "react";
+import { act, createContext, useContext, useReducer } from "react";
 
 const EmployeContext=createContext()
 const DispatchEmployeContext=createContext()
+export const useEmploye=()=>{
+    return useContext(EmployeContext)
+}
+export const useDispatchEmploye=()=>{
+    return useContext(DispatchEmployeContext)
+}
 
 export const EmployeProvider=({children})=>{
     const [employes,dispatch]=useReducer(
