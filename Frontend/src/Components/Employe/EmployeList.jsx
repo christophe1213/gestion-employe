@@ -3,6 +3,7 @@ import AddEmploye from "./AddEmploye"
 import UpdateEmploye from "./UpdateEmploye"
 import { DeleteEmploye } from "./DeleteEmploye"
 import { ToastContainer } from "react-toastify"
+import { useFormatNumber } from "../../Hook/useFormatNumber"
 export default function EmployeList({data=[]}){
     const [loading,setLoading]=useState(true)
     const [id,setId]=useState('Ex')
@@ -17,6 +18,7 @@ export default function EmployeList({data=[]}){
             clearInterval(timeout)
         }    
     },[id])
+
     const Ops =({salaire=0})=>{
         let c='';
         let op=''
@@ -77,7 +79,7 @@ export default function EmployeList({data=[]}){
                             <tr key={d.numEmp}>
                                 <td>{d.numEmp}</td>
                                 <td>{d.nom}</td>
-                                <td>{d.salaire}</td>
+                                <td>Ar {useFormatNumber(d.salaire)}</td>
                                 <td><Ops salaire={d.salaire}></Ops></td>
                                 <td>
                                     <button className='btn btn-success'

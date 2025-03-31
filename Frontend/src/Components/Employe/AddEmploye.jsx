@@ -48,7 +48,7 @@ export default function AddEmploye(){
 
                     />
                      <Input type={"number"}
-                        title={"salaire"}
+                        title={"salaire en Ar"}
                         value={employe.salaire}
                         onChange={(e)=>setEmploye({...employe,salaire:e.target.value})}
 
