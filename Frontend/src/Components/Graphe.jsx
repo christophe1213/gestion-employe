@@ -7,9 +7,10 @@ const data=[
 ]
 const PieChartComponent = ({min=0,max=0,sum}) => {
   const data =[
-    {value:sum,numGuichet:'total'},
-    {value:min,numGuichet:'minimal'},
     {value:max,numGuichet:'maximal'},
+    {value:min,numGuichet:'minimal'},
+   
+    {value:sum,numGuichet:'total'},
   ]
   return (
     <PieChart width={400} height={400}>

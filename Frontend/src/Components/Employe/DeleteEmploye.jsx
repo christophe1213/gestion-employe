@@ -22,7 +22,7 @@ export function DeleteEmploye({id}){
                 Supprimer
             </ModalHeader>
             <ModalBody>
-                <p>Vous voulez supprimer cette employée {id}</p>
+                <p>Vous voulez supprimer cette employée </p>
             </ModalBody>
             <ModalFooter>
             <button type="button" className="btn btn-success" 

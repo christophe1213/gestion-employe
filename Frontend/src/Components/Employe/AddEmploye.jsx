@@ -53,7 +53,7 @@ export default function AddEmploye(){
                         onChange={(e)=>setEmploye({...employe,salaire:e.target.value})}
 
                     />
-                    <button type="submit" className="btn btn-primary">Envoyer</button>
+                    <button type="submit" className="btn btn-primary">Ajouter</button>
                     
                 </form>
             

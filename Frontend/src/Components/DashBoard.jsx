@@ -4,6 +4,8 @@ import ViewSalaire from "./ViewSalaire"
 import { useDispatchEmploye, useEmploye } from "../Context/EmployeContext"
 import PieChartComponent from "./Graphe"
 import EmployeList from "./Employe/EmployeList"
+import AddEmploye from "./Employe/AddEmploye"
+import SalairePieChart from "./SalaireGraphe"
 export default function Dashboard(){
     const {selectEmploye,minMaxSum}=useEmployeStore()
     const dispatch =useDispatchEmploye()    
@@ -20,38 +22,50 @@ export default function Dashboard(){
     useEffect(()=>{
         fetchData()
     },[])
-    return <div className="card">
-        <div className="card">
+    return (
+  
+        <div>
+            <div class="container my-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Tableau de Bord - Employés</h2>
+                  
+                    <button type="btn" 
+                                className="btn btn-primary" 
+                                data-bs-toggle="modal"
+                                data-bs-target="#add">
+                                    <span className="m-1">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="white" d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm4 11h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"/>
+                                    </svg>
+                                    </span>
+                                    ajouter
 
-            <div className="card-header">
-                <div className="text-center mb3 h2">
-                        Tableau de bord
-                        </div>   
-                    
+                                
+                        </button> 
             </div>
-            <div className="card-body">
-                <ViewSalaire min={min} max={max} sum={sum}/>
-                <div className="row">
-                    <div className="col-md-6 mb-3">
-                       <div className="card h-100">
-                            <div className="card-header">
-                            <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                                Graphe 
-                            </div>
-                            <div className="card-body">
-                                <PieChartComponent min={min} max={max} sum={sum}/>
-                            </div>
 
-                       </div>
-                    </div>
-                    <div className="col-md-6 mb-3">
-                        <EmployeList data={employes}/>      
-                    </div>
-                </div>
-            </div>
-            <div>
-                
-            </div>
+    <div class="row">
+      
+      
+<AddEmploye></AddEmploye>
+<EmployeList data={employes}/> 
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Graphique des Salaires (Ar)</h5>
+           
+            <SalairePieChart sum={sum} min={min} max={max}></SalairePieChart>
+          </div>
         </div>
+      </div>
     </div>
+
+   
+
+    <ViewSalaire min={min} max={max} sum={sum}/>
+  </div>
+
+        </div>
+)
+
 }

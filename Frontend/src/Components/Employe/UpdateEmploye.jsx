@@ -40,7 +40,7 @@ export default function UpdateEmploye({id}){
     return (
         <Modal id="update">
             <ModalHeader>
-               Modifier un employé {id} 
+               Modifier un employé  
             </ModalHeader>
             <ModalBody>
                 <form onSubmit={submit}>
