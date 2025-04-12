@@ -14,8 +14,10 @@ const EmployeController = ()=>{
             else res.send(row[0])
         })
     }
+  
     const insertEmploye=(req,res)=>{
         const {numEmp,nom,salaire}=req.body
+        
         db.query("INSERT employe(numEmp,nom,salaire) VALUES(?,?,?)",
             [numEmp,nom,salaire],(err,row)=>{
                     if(err)res.send("Error requete insert "+err.message)
@@ -42,12 +44,20 @@ const EmployeController = ()=>{
             else res.send("SUCCESS")
         })   
     }
+
+    const getminMax=(req,res)=>{
+        db.query(' select min(salaire) as min , max(salaire) as max , sum(salaire) as sum from employe',(err,row)=>{
+            if(err)res.send(err.message)
+            else res.send(row[0])
+        })
+    }
     return {
         getAllEmploye,
         getByIdEmploye,
         insertEmploye,
         updateEmploye,
-        deleteEmploye
+        deleteEmploye,
+        getminMax,
     }
 }
 module.exports=EmployeController()

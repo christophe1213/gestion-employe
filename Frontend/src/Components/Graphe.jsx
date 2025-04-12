@@ -1,6 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
-
+import { useEmploye } from "../Context/EmployeContext";
 const COLORS = ["#82ca9d","#E45F5F", "#5555FF", ];
 const data=[
     

@@ -130,7 +130,7 @@ export default function EmployeList({data=[]}){
   <table class="table table-bordered table-striped">
     <thead class="table-dark">
       <tr>
-        <th>#</th>
+        <th>NumEmp</th>
         <th>Nom</th>
         <th>Salaire (Ar)</th>
         <th>OPS</th>

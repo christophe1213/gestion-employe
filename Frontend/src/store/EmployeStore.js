@@ -10,6 +10,7 @@ export const useEmployeStore=()=>{
         
         }
     }
+    
     const selectById=async(id)=>{
  
             try{
@@ -60,13 +61,22 @@ export const useEmployeStore=()=>{
         }
         return [min,max,sum]
     }
+    const statisque=async()=>{
+        try{
+            const r = await  axios.get('http://localhost:3000/statisque')
+            return r.data
+        }catch(e){
+        
+        }
+    }
     return {
         selectEmploye,
         insertEmploye,
         minMaxSum,
         deleteEmploye,
         updateEmploye,
-        selectById
+        selectById,
+        statisque
 
     }
 }

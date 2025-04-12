@@ -11,6 +11,7 @@ export default function Dashboard(){
     const dispatch =useDispatchEmploye()    
     const employes=useEmploye()
     const [min,max,sum]=minMaxSum(employes)
+    
     const fetchData=async()=>{
         const r = await selectEmploye()
         if(r!=null)dispatch({
